@@ -6,6 +6,8 @@
 
 Run this command 
 
+**After a push, nvim-tree may still show files as modified — press R to force a full refresh and update the git status.**
+
 ```sh 
 stow --target=$HOME nvarch-config
 ```
