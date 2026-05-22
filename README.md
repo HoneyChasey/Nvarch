@@ -57,6 +57,26 @@ Exemple:
 
 ## Plugins 
 
+
+## Hardtime 
+
+https://github.com/m4xshen/hardtime.nvim  
+
+Plugin to master the neovim commands. 
+
+### Usage
+> Check the github to have the latest usage case or else.
+
+Hardtime is enabled by default. You can change its state with the following commands:
+
+    :Hardtime enable enable Hardtime
+    :Hardtime disable disable Hardtime
+    :Hardtime toggle toggle Hardtime
+
+You can view the most frequently seen hints with :Hardtime report.
+
+Your log file is at ~/.local/state/nvim/hardtime.nvim.log.
+
 ## Parser 
 
 If the parser make an error or crash (like the color of your code desapear), please Run :Lazy, and Sync and Update.
