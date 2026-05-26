@@ -21,6 +21,8 @@ stow --target=$HOME nvarch-config
 
 ## Development Setup And files for autoconfiguration of LSP 
 
+> local servers is a list of LSP server names that NvChad loops over to tell Neovim which language servers to enable and attach to your buffers. You can find her in the lspconfig file in configs folder. **Please, when adding lsp, go to the referenced github to see the name called for nvim.lspconfig plugin**.
+
 In this section we will see how to create a file at the root of your project. Thx to this file, your lsp configured correctly for specific dev environment.
 
 ### Python LSP with PyRight 
