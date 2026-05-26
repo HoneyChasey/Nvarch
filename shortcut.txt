@@ -1,0 +1,5 @@
+ctrl + u = scroll up 
+ctrl + d = scroll down
+
+Go left faster = w 
+Go right faster = b
