@@ -1,6 +1,14 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "bashls", "clangd", "dockerls", "gopls", "jdtls", "lua_ls", "pyright"} -- local servers is a list of LSP server names that NvChad loops over to tell Neovim which language servers to enable and attach to your buffers. --
+local servers = { "html", "cssls", "bashls", "clangd", "dockerls", "gopls", "jdtls", "lua_ls", "pyright", "svelte"} -- Write here all the the name of lsp you want to enable. To get their name, please refer to https://github.com/neovim/nvim-lspconfig--
+
+--Exemple i want to add enable svelte to my nvim go to the repo and search the name of the language.--
+-- We have nvim-lspconfig/lua/lspconfig/configs/svelte.lua
+                                              --^^^^^^
+                                              --this IS the name you need to write in the array servers
+                                              --
+-- When you add a name to your servers list, Neovim looks for a file with that name in lspconfig's configs folder, reads it to know which binary to run and how to start it to import the lspconfiguration to the neovim config
+
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers 

@@ -25,18 +25,6 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
-
----  enable lsp, LSP PART 
-vim.lsp.enable('pyright')
-vim.lsp.enable('gopls')
-vim.lsp.enable('clangd')
-vim.lsp.enable('docker_compose_language_service')
-vim.lsp.enable("rust_analyzer")
--- vim.lsp.enable('twiggy-language-server')
-vim.lsp.enable('jdtls')
-vim.lsp.enable('qmlls')
-vim.lsp.enable('bash-language-server')
-
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
