@@ -28,3 +28,4 @@ sudo pacman -S luarocks
 sudo pacman -S wl-clipboard
 sudo pacman -S ripgrep
 sudo pacan -S unixodbc # Used by qllms lsp. ODBC is an open specification for providing application developers with a predictable API with which to access Data Sources
+sudo pacman -S tree-sitter-cli # for download other parser for other  languages
