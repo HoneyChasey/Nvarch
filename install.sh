@@ -14,14 +14,14 @@ if [ "$(uname)" = "Darwin" ]; then
     echo "Installing lazygit..."
     brew install lazygit
 
+    echo "Installing lazydocker..."
+    brew install lazydocker
+
     echo "Installing luarocks..."
     brew install luarocks
 
     echo "Installing unixodbc (used by qllms lsp)..."
     brew install unixodbc
-
-    echo "Installing tree-sitter..."
-    brew install tree-sitter
 
     echo "Note: wl-clipboard is Linux/Wayland only. On macOS, pbcopy/pbpaste are built-in."
     echo "If not working, please check the relevant repos for alternatives."
@@ -31,6 +31,9 @@ elif [ -f /etc/os-release ] && grep -q "Arch" /etc/os-release; then
 
     echo "Installing lazygit..."
     sudo pacman -S --noconfirm lazygit
+
+    echo "Installing lazydocker..."
+    brew -S --noconfirm lazydocker
 
     echo "Installing luarocks..."
     sudo pacman -S --noconfirm luarocks
@@ -58,6 +61,9 @@ elif [ -f /etc/os-release ] && grep -q "Debian\|Ubuntu" /etc/os-release; then
 
     echo "Installing luarocks..."
     sudo apt-get install -y luarocks
+
+    echo "Installing lazydocker..."
+    sudo apt-get install -y lazydocker
 
     echo "Installing wl-clipboard (Wayland clipboard support)..."
     sudo apt-get install -y wl-clipboard
