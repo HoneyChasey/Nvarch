@@ -2,6 +2,9 @@
 echo "Installation of dependencies for neovim on this computer"
 sleep 1
 
+echo "Installing tree-sitter-cli (for downloading parsers for other languages)..."
+cargo install --locked tree-sitter-cli
+
 if [ "$(uname)" = "Darwin" ]; then
     echo "You are running this setup file on macOS"
 
@@ -41,8 +44,6 @@ elif [ -f /etc/os-release ] && grep -q "Arch" /etc/os-release; then
     echo "Installing unixodbc (used by qllms lsp)..."
     sudo pacman -S --noconfirm unixodbc
 
-    echo "Installing tree-sitter-cli (for downloading parsers for other languages)..."
-    sudo pacman -S --noconfirm tree-sitter-cli
 
     echo "If not working, please check the relevant repos for alternatives."
 
@@ -63,9 +64,6 @@ elif [ -f /etc/os-release ] && grep -q "Debian\|Ubuntu" /etc/os-release; then
 
     echo "Installing unixodbc (used by qllms lsp)..."
     sudo apt-get install -y unixodbc
-
-    echo "Installing tree-sitter (for downloading parsers for other languages)..."
-    sudo apt-get install -y tree-sitter-cli
 
     echo "If not working, please check the relevant repos for alternatives."
 
