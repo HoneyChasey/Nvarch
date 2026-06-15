@@ -2,7 +2,7 @@
 echo "Installation of dependencies for neovim on this computer"
 sleep 1
 
-echo "Installing tree-sitter-cli (for downloading parsers for other languages)..."
+echo "Installation of tree-sitter"
 cargo install --locked tree-sitter-cli
 
 if [ "$(uname)" = "Darwin" ]; then
