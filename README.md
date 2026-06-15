@@ -194,7 +194,7 @@ vim.lsp.enable(servers)
 ```
 
 > To find the correct name for a server, check the lspconfig configs list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-> Or run `:Mason` and search with `/`.
+> More information on the file .config/nvim/lua/configs/lspconfig.lua
 
 When you add a name to the `servers` list, Neovim looks for a matching file in lspconfig's `configs/` folder and reads it to know which binary to run and how to start it.
 
