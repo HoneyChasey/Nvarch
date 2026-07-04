@@ -2,6 +2,9 @@
 echo "Installation of dependencies for neovim on this computer"
 sleep 1
 
+echo "Installing Rust via rustup..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 echo "Installation of tree-sitter"
 cargo install --locked tree-sitter-cli
 

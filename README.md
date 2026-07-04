@@ -253,6 +253,16 @@ To make your config override plugin defaults, use `after/lsp/` or `vim.lsp.confi
 :checkhealth vim.lsp   -- check LSP health (run this inside the target language file)
 ```
 
+### Troubleshooting
+
+If an LSP is not working properly, check the log file:
+
+```bash
+cat ~/.local/state/nvim/lsp.log
+```
+
+This file records all LSP activity and errors — it's the first place to look when a server fails to start or behaves unexpectedly.
+
 ---
 
 ## Per-project LSP configuration
