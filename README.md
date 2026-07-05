@@ -2,6 +2,9 @@
     <img alt="nvarch logo" src="https://github.com/HoneyChasey/neo-config/blob/main/.github/assets/logo.jpg" width="120px"/>
 </div>
 
+
+> Only work with neovim >= 0.11
+
 # Nvarch — NvChad Neovim Config
 
 Personal Neovim configuration built on top of **NvChad v2.5**, managed with **GNU Stow**.
