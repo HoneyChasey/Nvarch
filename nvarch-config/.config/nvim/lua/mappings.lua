@@ -39,7 +39,7 @@ map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto prev" })
 
-map("n", "<leader>x", "<cmd>bdelete!<CR>", { desc = "buffer close" }) -- I had a ! at the end to force the closure of terminal session
+map("n", "<leader>x", "<cmd>bdelete!<CR>", { desc = "buffer close" })
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
