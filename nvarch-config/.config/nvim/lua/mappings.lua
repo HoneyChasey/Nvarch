@@ -48,9 +48,8 @@ map("n", "<leader>x", ":b#|bd#<CR>", { desc = "buffer close, keep window" }) -- 
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+-- oil
+map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "open oil (file explorer)" })
 
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })

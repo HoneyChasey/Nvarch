@@ -6,3 +6,4 @@
  - [ ] Custom the status-bar
  - [ ] Finish to custom the dashboard 
  - [x] When i close a file with ctrl x or :q, this kill all the window and i don't keep, the space for other open files. Like the cursor going directly on nvim-tree
+ - [x] Adding oil
