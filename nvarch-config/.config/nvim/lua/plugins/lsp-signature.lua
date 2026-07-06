@@ -4,4 +4,4 @@ return {
   opts = {
     -- cfg options
   },
-} 
+}

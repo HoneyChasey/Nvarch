@@ -39,7 +39,10 @@ map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto prev" })
 
-map("n", "<leader>x", "<cmd>bdelete!<CR>", { desc = "buffer close" })
+map("n", "<leader>x", ":b#|bd#<CR>", { desc = "buffer close, keep window" }) -- S/O to this guy https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
+
+-- :b# switches the current window to the alternate buffer (the previously active one)
+-- |bd# then deletes what is now the alternate buffer — which is the buffer you just left
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
