@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto', -- auto-detects colors from current colorscheme instead of a fixed theme
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -11,12 +11,12 @@ require('lualine').setup {
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
-    globalstatus = true, -- single statusline for the whole editor, avoids per-window glitches (e.g. nvim-tree)
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-      refresh_time = 16, -- ~60fps
+      refresh_time = 16,
       events = {
         'WinEnter',
         'BufEnter',
@@ -35,7 +35,23 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {
+      { -- shows active LSP client name, or nothing if none attached
+        function()
+          local clients = vim.lsp.get_clients({ bufnr = 0 })
+          if #clients == 0 then
+            return ""
+          end
+          local names = {}
+          for _, client in ipairs(clients) do
+            table.insert(names, client.name)
+          end
+          return "  " .. table.concat(names, ", ")
+        end,
+        color = { fg = "#98be65" },
+      },
+      'encoding', 'fileformat', 'filetype'
+    },
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -49,11 +65,9 @@ require('lualine').setup {
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = { "nvim-tree" }, -- built-in support so lualine renders correctly for the nvim-tree window
+  extensions = { "nvim-tree" },
 }
 
--- for lualine to correctly integrate when changing theme:
--- forces a redraw of the statusline the moment :colorscheme runs (e.g. via Telescope)
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     require("lualine").refresh()
