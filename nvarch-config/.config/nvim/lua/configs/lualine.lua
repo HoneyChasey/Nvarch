@@ -11,12 +11,12 @@ require('lualine').setup {
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
-    globalstatus = true,
+    globalstatus = false,
     refresh = {
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-      refresh_time = 16,
+      refresh_time = 16, -- ~60fps
       events = {
         'WinEnter',
         'BufEnter',
@@ -32,26 +32,45 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {
-      { -- shows active LSP client name, or nothing if none attached
+    lualine_a = {
+      {
         function()
-          local clients = vim.lsp.get_clients({ bufnr = 0 })
-          if #clients == 0 then
-            return ""
-          end
-          local names = {}
-          for _, client in ipairs(clients) do
-            table.insert(names, client.name)
-          end
-          return "  " .. table.concat(names, ", ")
+          local mode = require('lualine.utils.mode').get_mode()
+          return ' ' .. mode -- Neovim logo + mode, one string
         end,
-        color = { fg = "#98be65" },
-      },
-      'encoding', 'fileformat', 'filetype'
+      }
     },
+    lualine_b = {
+      {
+        'branch',
+        icon = '', -- custom git branch icon
+      },
+      'diff',
+      {
+        'diagnostics',
+        sources = { 'nvim_lsp' }, -- only show LSP diagnostics
+      },
+    },
+    lualine_c = {'filename'},
+lualine_x = {
+  {
+    function()
+      local clients = vim.lsp.get_clients({ bufnr = 0 })
+      if #clients == 0 then
+        return ''
+      end
+      local names = {}
+      for _, client in ipairs(clients) do
+        table.insert(names, client.name)
+      end
+      return ' ~ ' .. table.concat(names, ', ') -- LSP logo + names, one string
+    end,
+    color = { fg = '#98c379' },
+  },
+  'encoding',
+  'fileformat',
+  'filetype'
+},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -60,16 +79,11 @@ require('lualine').setup {
     lualine_b = {},
     lualine_c = {'filename'},
     lualine_x = {'location'},
-    lualine_y = {}
+    lualine_y = {},
+    lualine_z = {}
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = { "nvim-tree" },
+  extensions = {}
 }
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = function()
-    require("lualine").refresh()
-  end,
-})
