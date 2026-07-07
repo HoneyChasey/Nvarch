@@ -39,18 +39,35 @@ map("n", "<tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "buffer goto prev" })
 
-map("n", "<leader>x", "<cmd>bdelete!<CR>", { desc = "buffer close" })
+map("n", "<leader>x", ":b#|bd#<CR>", { desc = "buffer close, keep window" }) -- S/O to this guy https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
+
+-- :b# switches the current window to the alternate buffer (the previously active one)
+-- |bd# then deletes what is now the alternate buffer — which is the buffer you just left
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+-- oil
+map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "open oil (file explorer)" })
 
 -- telescope
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<leader>fw", function() -- telescope live grep with dotfiles
+  require("telescope.builtin").live_grep({
+    additional_args = function()
+      return { "--hidden" }
+    end,
+  })
+end, { desc = "telescope live grep (hidden)" })
+
+
+map("n", "<leader>ff", function() -- telescope find file with dotfiles
+  require("telescope.builtin").find_files({
+    hidden = true,
+    file_ignore_patterns = { "%.git/" },
+  })
+end, { desc = "telescope find files (with hidden)" })
+
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
 map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
@@ -60,19 +77,13 @@ map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
--- theme picker (replaces nvchad.themes)
+--- theme picker (replaces nvchad.themes)
 map("n", "<leader>th", "<cmd>Telescope colorscheme<CR>", { desc = "telescope colorscheme picker" })
 
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map(
-  "n",
-  "<leader>fa",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "telescope find all files" }
-)
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+
 
 -- new terminals (replaces nvchad.term, using toggleterm.nvim)
 map("n", "<leader>h", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "terminal new horizontal term" })

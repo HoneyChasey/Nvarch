@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "plugins" }, -- loads every file under lua/plugins/
+    { import = "themes" }, -- loads every themes
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
