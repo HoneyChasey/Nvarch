@@ -4,3 +4,5 @@ shift + I (cursor on nvim-tree) = display the gitignore files in the panel. Or Y
 
 Go left faster = w 
 Go right faster = b
+
+ctrl + x = change to other buffer and close the previous one
