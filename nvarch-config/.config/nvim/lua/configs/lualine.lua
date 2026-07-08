@@ -67,11 +67,10 @@ lualine_x = {
     end,
     color = { fg = '#98c379' },
   },
-  'encoding',
   'fileformat',
   'filetype'
 },
-    lualine_y = {'progress'},
+    lualine_y = {''},
     lualine_z = {'location'}
   },
   inactive_sections = {
