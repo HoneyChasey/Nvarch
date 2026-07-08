@@ -51,6 +51,9 @@ map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 -- oil
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "open oil (file explorer)" })
 
+-- neo-tree
+map("n", "<leader>tr", "<cmd>Neotree<CR>", {desc = "Open neotree (tree file explorer)"})
+
 -- telescope
 map("n", "<leader>fw", function() -- telescope live grep with dotfiles
   require("telescope.builtin").live_grep({
