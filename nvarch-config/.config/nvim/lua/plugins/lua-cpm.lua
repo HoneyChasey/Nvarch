@@ -1,13 +1,15 @@
-return { -- it's pretty heavy bc the developer do not export the plugin for lazy. Thx claud and reddit
+return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
+    'onsails/lspkind.nvim',
   },
   config = function()
     local cmp = require('cmp')
+    local lspkind = require('lspkind')
 
     cmp.setup({
       completion = {
@@ -19,7 +21,7 @@ return { -- it's pretty heavy bc the developer do not export the plugin for lazy
         ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
         ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ["<Tab>"] = cmp.mapping.select_next_item(), -- press tab to selec the next item
+        ["<Tab>"] = cmp.mapping.select_next_item(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
       }),
@@ -29,9 +31,22 @@ return { -- it's pretty heavy bc the developer do not export the plugin for lazy
       }, {
         { name = 'buffer' },
       }),
+      formatting = {
+        fields = { 'abbr', 'icon', 'kind', 'menu' },
+        format = lspkind.cmp_format({
+          mode = 'symbol_text',
+          preset = 'default', -- Nerd Fonts icon set
+          -- preset = 'codicons', -- Vscode codicons icon set (must be dowloaded after)
+          maxwidth = {
+            menu = 50,
+            abbr = 50,
+          },
+          ellipsis_char = '...',
+          show_labelDetails = true,
+        })
+      },
     })
 
-    -- register LSP capabilities so LSP servers know cmp can handle completions
     vim.lsp.config('*', { capabilities = require('cmp_nvim_lsp').default_capabilities() })
   end
 }

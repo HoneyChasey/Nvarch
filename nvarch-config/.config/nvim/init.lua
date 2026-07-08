@@ -4,7 +4,6 @@ vim.g.maplocalleader = "\\"
 -- bootstrap + setup lazy.nvim (loads all plugins from lua/plugins/)
 require("configs.lazy")
 
-
 -- bootstrap for theemes
 
 require "options"
