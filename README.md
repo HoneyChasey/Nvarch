@@ -12,7 +12,7 @@ My personal Neovim configuration. Originally built on top of **NvChad v2.5**, th
 
 
 <div align="center">
-    <img alt="nvarch logo" src="/.github/assets/demo.png" width="120px"/>
+    <img alt="nvarch logo" src="/.github/assets/demo.png"/>
 </div>
 
 ---
