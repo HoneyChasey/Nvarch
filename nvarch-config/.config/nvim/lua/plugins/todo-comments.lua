@@ -1,3 +1,4 @@
+-- Highlights and lists TODO, FIXME, NOTE, and similar comment tags
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },

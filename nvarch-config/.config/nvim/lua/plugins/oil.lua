@@ -1,3 +1,4 @@
+-- File explorer that opens directories as editable buffers
 return {
   'stevearc/oil.nvim',
   ---@module 'oil'

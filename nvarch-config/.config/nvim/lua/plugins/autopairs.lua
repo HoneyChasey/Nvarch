@@ -1,3 +1,4 @@
+-- Auto closes brackets, quotes, and pairs while typing
 return {
     'windwp/nvim-autopairs',
     event = "InsertEnter",

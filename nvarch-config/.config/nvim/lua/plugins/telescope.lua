@@ -1,3 +1,4 @@
+-- Fuzzy finder for files, text, buffers, and more
 return {
     'nvim-telescope/telescope.nvim', version = '*',
     dependencies = {
