@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="nvarch logo" src="https://github.com/HoneyChasey/neo-config/blob/main/.github/assets/logo.jpg" width="120px"/>
+    <img alt="nvarch logo" src="/.github/assets/logo.jpg" width="120px"/>
 </div>
 
 
@@ -8,6 +8,12 @@
 # Nvarch — Neovim Config
 
 My personal Neovim configuration. Originally built on top of **NvChad v2.5**, then fully migrated off the `NvChad/NvChad` UI plugin — this is now a standalone config built directly on **lazy.nvim**, with hand-picked plugins and no NvChad runtime dependency. `lua/chadrc.lua` is a leftover stub from that migration and currently does nothing.
+
+
+
+<div align="center">
+    <img alt="nvarch logo" src="/.github/assets/demo.png" width="120px"/>
+</div>
 
 ---
 
