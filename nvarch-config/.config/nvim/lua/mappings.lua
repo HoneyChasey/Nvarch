@@ -115,3 +115,8 @@ map("n", "<leader>g", "<cmd>lua require('lazygit').lazygit()<CR>", { desc = "Ope
 -- Telescope mapping
 map('n', '<leader>f', ':Telescope find_files<CR>')
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- vim inlay hint mapping
+vim.keymap.set('n', '<leader>ih', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+end, { desc = '[T]oggle Inlay [H]ints' })
