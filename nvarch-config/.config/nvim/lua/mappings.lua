@@ -31,6 +31,7 @@ end, { desc = "general format file" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+map("n", "gd", vim.lsp.buf.definition, { desc = "LSP go to definition"})
 
 -- bufferline (replaces tabufline)
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
