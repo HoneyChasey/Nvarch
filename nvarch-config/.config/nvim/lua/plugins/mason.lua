@@ -1,5 +1,8 @@
 -- Package manager for LSP servers, linters, and formatters
 return {
     "mason-org/mason.nvim",
-    opts = {}
+    opts = {},
+    config = function()
+      require("configs.mason")
+    end
 }
