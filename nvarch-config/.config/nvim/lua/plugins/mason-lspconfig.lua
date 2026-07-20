@@ -6,6 +6,6 @@ return{
         "neovim/nvim-lspconfig",
     },
     config = function()
-      require("configs.mason")
+      require("configs.mason-lspconfig")
     end
 }

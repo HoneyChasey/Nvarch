@@ -2,7 +2,4 @@
 return {
     "mason-org/mason.nvim",
     opts = {},
-    config = function()
-      require("configs.mason")
-    end
 }
