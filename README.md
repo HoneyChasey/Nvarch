@@ -53,6 +53,10 @@ Dependencies installed: `ripgrep`, `lazygit`, `lazydocker`, `luarocks`, `unixodb
 
 ---
 
+## Latex Users
+
+use **\ll** to compile + open zathura. Auto compile after each modification
+
 ## Uninstall
 
 ```bash
