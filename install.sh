@@ -76,6 +76,8 @@ elif [ -f /etc/os-release ] && grep -q "Debian\|Ubuntu" /etc/os-release; then
 
     echo "If not working, please check the relevant repos for alternatives."
 
+    echo "setup tex on this computer"
+    sudo pacman -S zathura texlive-binextra
 else
     echo "Your system is not supported by this setup file. Aborting."
     exit 1
