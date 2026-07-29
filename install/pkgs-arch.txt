@@ -6,6 +6,9 @@ unixodbc
 wl-clipboard
 texlive-basic
 texlive-latex
+texlive-latexrecommended
+texlive-fontsrecommended
+texlive-latexextra
 texlive-binextra
 zathura-pdf-mupdf
 tesseract-data-fra

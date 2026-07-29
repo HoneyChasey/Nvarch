@@ -57,6 +57,9 @@ Dependencies installed: `ripgrep`, `lazygit`, `lazydocker`, `luarocks`, `unixodb
 
 use **\ll** to compile + open zathura. Auto compile after each modification
 
+> If package for latex missing, please use `pacman -F package_name`. Exemple. `pacman -F soul.sty # output extra/texlive-plaingeneric 2023.66594-19 (texlive)
+    usr/share/texmf-dist/tex/generic/soul/soul.sty`. Don't forget to **pacman -Fy before** if asked.
+
 ## Uninstall
 
 ```bash
