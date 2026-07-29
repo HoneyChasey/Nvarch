@@ -1,0 +1,12 @@
+ripgrep
+lazygit
+lazydocker
+luarocks
+unixodbc
+wl-clipboard
+texlive-basic
+texlive-latex
+texlive-binextra
+zathura-pdf-mupdf
+tesseract-data-fra
+tesseract-data-eng
