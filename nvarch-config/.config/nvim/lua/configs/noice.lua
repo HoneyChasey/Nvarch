@@ -1,2 +1,5 @@
-require("noice").setup({ -- write your config here
-}])
+require("noice").setup({
+  presets = {
+    bottom_search = true,
+  }
+})
