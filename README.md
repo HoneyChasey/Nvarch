@@ -39,6 +39,41 @@ Then follow the full installation steps below.
 
 > **Before installing**, make sure the latest version of Java is installed on your machine — otherwise `jdtls` (Java LSP) won't work.
 
+### If you are on nixOs
+
+Copy this nix script. You can find him on the install folder (`default.nix`).
+
+```nix
+# Nvarch is minial config for neovim. This nix provide you the recommended instalation for your nixOs
+{pkgs, ...}: let
+  myTex = pkgs.texliveBasic.withPackages (ps:
+    with ps; [
+      collection-latex
+      collection-latexrecommended
+      collection-fontsrecommended
+      collection-latexextra
+      collection-binextra
+    ]);
+in {
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+
+    extraPackages = with pkgs; [
+      ripgrep
+      lazydocker
+      lazygit
+      luarocks
+      wl-clipboard
+      myTex
+    ];
+  };
+}
+```
+> Make sure you have, go, rust (rustc and cargo) and nodejs installed globaly on your nix (for nsp installation).
+
 ### install.sh
 
 The script installs system-level dependencies. It supports:
