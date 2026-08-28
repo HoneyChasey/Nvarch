@@ -1,2 +1,3 @@
 .DS_Store
 nvarch-config/.config/nvim/lazy-lock.json
+.direnv
