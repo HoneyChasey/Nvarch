@@ -1,5 +1,12 @@
 # nvim-config
 
+
+## Installation
+
+```sh
+git clone https://github.com/HoneyChasey/Nvarch.git ~/.config/nvim
+```
+
 ## Updating plugins
 
 Plugins are managed with `vim.pack`. To update them all:

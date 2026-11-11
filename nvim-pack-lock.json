@@ -1,10 +1,5 @@
 {
   "plugins": {
-    "bufferline.nvim": {
-      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-      "src": "https://github.com/akinsho/bufferline.nvim",
-      "version": ">=0.0.0"
-    },
     "catppuccin": {
       "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
       "src": "https://github.com/catppuccin/nvim"
@@ -85,6 +80,10 @@
       "rev": "1a14083046d96e88e361d1da00761c40d45012f3",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
       "version": "'v3.x'"
+    },
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "nightfly": {
       "rev": "2c31d07ce05efa92bcb7f893f9c74a846226c898",
@@ -176,10 +175,6 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
-    },
-    "zen": {
-      "rev": "e552fc12f847113a05589981d02f69c953d6d3e9",
-      "src": "https://github.com/nendix/zen.nvim"
     }
   }
 }
