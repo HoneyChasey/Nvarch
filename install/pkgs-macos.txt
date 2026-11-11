@@ -1,5 +1,0 @@
-ripgrep
-lazygit
-lazydocker
-luarocks
-unixodbc

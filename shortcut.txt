@@ -1,8 +1,0 @@
-ctrl + u = scroll up 
-ctrl + d = scroll down
-shift + I (cursor on nvim-tree) = display the gitignore files in the panel. Or You can also use require("nvim-tree").setup({ git = { ignore = false } })
-
-Go left faster = w 
-Go right faster = b
-
-ctrl + x = change to other buffer and close the previous one
