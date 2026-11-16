@@ -26,7 +26,7 @@ require('lualine').setup {
         end,
       },
       -- Current Vim mode (NORMAL, INSERT, VISUAL...)
-      'mode',
+      { 'mode', fmt = function(str) return '--' .. str .. '--' end },
       -- Coding session duration
       {
         function()

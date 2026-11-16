@@ -44,3 +44,10 @@ create_cmd("TSInstallAll", function()
 end, {})
 
 ----
+
+-- lock terminal height so it stays at the bottom with its size when other windows close
+autocmd("TermOpen", {
+  callback = function()
+    vim.wo.winfixheight = true
+  end,
+})

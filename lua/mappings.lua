@@ -22,7 +22,6 @@ map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
-map("n", "x", "V", {desc = "Select all line"})
 
 -- REMOVED: <leader>ch NvCheatsheet (was NvChad UI only)
 -- which-key already covers "show all keymaps" via <leader>wK below
@@ -42,7 +41,11 @@ map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>bprev<CR>", { desc = "buffer goto prev" })
 
-map("n", "<leader>x", ":bd!<CR>", { desc = "buffer close, keep window" }) -- S/O to this guy https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window and to this guy also https://stackoverflow.com/questions/1269648/how-do-i-close-a-single-buffer-out-of-many-in-vim
+map("n", "<leader>x", function()
+  -- mini.bufremove swaps the buffer out of every window showing it before deleting,
+  -- so the layout is kept (neo-tree / terminal won't expand to fill the screen)
+  require("mini.bufremove").delete(0, true)
+end, { desc = "buffer close, keep window" }) -- S/O to this guy https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window and to this guy also https://stackoverflow.com/questions/1269648/how-do-i-close-a-single-buffer-out-of-many-in-vim
 
 -- :b# switches the current window to the alternate buffer (the previously active one)
 -- |bd# then deletes what is now the alternate buffer — which is the buffer you just left

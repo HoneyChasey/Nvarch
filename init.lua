@@ -14,7 +14,7 @@ require("plugins.init")
 
 
 
-vim.cmd.colorscheme("rose-pine") -- change here your default theme
+vim.cmd.colorscheme("onelight") -- change here your default theme
 
 vim.schedule(function()
   require "mappings"
