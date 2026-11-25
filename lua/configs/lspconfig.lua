@@ -1,14 +1,15 @@
-local servers = require("configs.servers")
+vim.lsp.enable({ "html", "cssls", "bashls", "clangd", "dockerls", "docker_compose_language_service", "gopls", "jdtls", "lua_ls", "pyright", "svelte", "rust_analyzer", "texlab", "nil_ls", "terraformls" })
 
-vim.lsp.enable(servers)
+-- Write here all the the name of lsp you want to enable. To get their name, please refer to https://github.com/neovim/nvim-lspconfig--
 
+-- If you want to search directly in neovim :help lspconfig-all. 
+-- You can after that search your language. Exemple search for rust lsp write /rust and find your config
 
 vim.diagnostic.config({
   virtual_text = true,
   virtual_lines = false}) -- display lsp diagnostic in line for the user. Change current_line to true to display only the diagnostic when cursor is on the specific line. Only work natively with neovim >= 0.11
 
 
---vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers 
 --
